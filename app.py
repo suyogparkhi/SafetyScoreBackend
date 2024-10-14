@@ -74,3 +74,8 @@ def read_root():
 def predict_safety(data: LocationData):
     score = calculate_safety_score(data.latitude, data.longitude, data.timestamp)
     return {"safety_score": score}
+
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
