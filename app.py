@@ -76,6 +76,6 @@ def predict_safety(data: LocationData):
     return {"safety_score": score}
 
 
-if __name__ == "__main__":
+if __name__ == "__app__":
     port = int(os.getenv("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
